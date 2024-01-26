@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Landing page with dropdown menus">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="index.js" defer></script>
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+</head>
+<body>
+  
+  <header class="header flex justify-between my-5 mx-3">
+    <img src="images/logo.svg" alt="logo" class="header__logo">
+    
+    <div class="header__darkened-bg"></div>
+
+    <nav class="header__menu">
+      
+      <button class="header__btn-open">
+        <img src="images/icon-menu.svg" alt="icon-menu" class="header__open-icon">
+      </button>
+      
+      <ul class="header__navbar">
+
+        <button class="header__btn-close">
+          <img src="images/icon-close-menu.svg" alt="icon-close-menu" class="header__close-icon">
+        </button>
+
+        <li class="header__links header__features grid">
+          <span class="flex items-center gap-2">Features <img src="images/icon-arrow-down.svg" alt="" class="feature-arrow"></span>
+
+          <ul class="header__features__list">
+            <li class="header__features__items">
+              <a href="#" class="header__features__links">
+                <img src="images/icon-todo.svg" alt="">
+                Todo List
+              </a>
+            </li>
+            <li class="header__features__items">
+              <a href="#" class="header__features__links">
+                <img src="images/icon-calendar.svg" alt="">
+                Calendar
+              </a>
+            </li>
+            <li class="header__features__items">
+              <a href="#" class="header__features__links">
+                <img src="images/icon-reminders.svg" alt="">
+                Reminders
+              </a>
+            </li>
+            <li class="header__features__items">
+              <a href="#" class="header__features__links">
+                <img src="images/icon-planning.svg" alt="">
+                Planning
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="header__links header__company grid">
+          <span class="flex items-center gap-2">Company <img src="images/icon-arrow-down.svg" alt="" class="company-arrow"></span>
+          <ul class="header__company__list">
+            <li class="header__company__items">
+              <a href="#" class="header__company__links">
+                History
+              </a>
+            </li>
+            <li class="header__company__items">
+              <a href="#" class="header__company__links">
+                Our Tem
+              </a>
+            </li>
+            <li class="header__company__items">
+              <a href="#" class="header__company__links">
+                Blog
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+
+        <li class="header__links">
+          <a href="#">Careers</a>
+        </li>
+        <li class="header__links">
+          <a href="#">About</a>
+        </li>
+        <div class="header__login-register">
+          <a href="" class="header__login">Login</a>
+          <button class="header__register">Register</button>
+        </div>
+      </ul>
+
+
+    </nav>
+
+  </header>
+
+  <main class="container">
+    <picture class="container__picture">
+      <source media="(min-width: 1024px)" srcset="images/image-hero-desktop.png" type="image/png">
+      <img src="images/image-hero-mobile.png" alt="image-hero" class="container__main-img">
+    </picture>
+    <div class="container__content">
+      <h1 class="container__title">Make 
+        remote work</h1>
+      <p class="container__paragraph">
+        Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.
+      </p>
+      <button class="container__button">Learn more</button>
+      <div class="container__companies">
+        <img src="images/client-databiz.svg" alt="logo databiz" class="container__companies-logo">
+        <img src="images/client-audiophile.svg" alt="logo audiophile" class="container__companies-logo">
+        <img src="images/client-meet.svg" alt="logo meet" class="container__companies-logo">
+        <img src="images/client-maker.svg" alt="logo maker" class="container__companies-logo">
+      </div>
+    </div>
+  </main>
+  
+  <div class="attribution hidden">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>

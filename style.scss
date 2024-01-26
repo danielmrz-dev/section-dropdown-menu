@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@use 'components/variables';
+@use 'components/container';
+@use 'components/header';
+
+* {
+    font-family: variables.$Epilogue;
+}
+
+body {
+    margin-bottom: 3rem;
+    display: grid;
+    justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        min-height: 100vh;
+        grid-template-rows: 5% 95%;
+    }
+}

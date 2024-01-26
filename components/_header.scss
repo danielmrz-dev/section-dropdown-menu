@@ -1,0 +1,237 @@
+@use 'variables';
+
+.header {
+    &__menu {
+        position: relative;
+    }
+    &__darkened-bg {
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 9999px;
+        height: 9999px;
+        background-color: rgba(0, 0, 0, 0.338);
+    }
+    &__navbar {
+        opacity: 0;
+        z-index: -1;
+        position: absolute;
+        top: -27px;
+        right: -12px;
+        background-color: white;
+        width: 65vw;
+        height: 1000px;
+        padding: 1.5rem 1rem 1.5rem 1.5rem;
+        transition: opacity 200ms ease-in-out, 
+                    width 200ms ease-in-out,           
+                    height 200ms ease-in-out;
+    }
+    &__btn-close {
+        display: block;
+        margin-left: auto;
+        cursor: pointer;   
+    }
+    .active-menu {
+        opacity: 1;
+        z-index: 2;
+    }
+    .active-bg {
+        opacity: 1;
+    }
+    &__links {
+        cursor: pointer;
+    }
+    &__features {
+        padding-top: 1rem;
+        
+    }
+    
+    &__features__list {
+        grid-area: 2 / 1;
+    }
+    &__company__list {
+        grid-area: 2 / 1;
+    }
+    
+
+    &__features__list,
+    &__company__list {
+        grid-area: 2 / 1;
+        display: flex;
+        flex-direction: column;
+        padding-left: 1.5rem;
+        gap: .5rem;
+        height: 0;
+        margin-top: -16px;
+        opacity: 0;
+        z-index: -1;
+        transition: height .2s ease-in-out,
+                    margin .2s ease-in-out,
+                    opacity .2s ease-in-out;
+    }
+    .active-link {
+        height: 110px;
+        margin-top: 0;
+        opacity: 1;
+        pointer-events: all;
+        z-index: 2;
+    }
+    .active-link-company {
+        height: 80px;
+        margin-top: 0;
+        opacity: 1;
+        pointer-events: all;
+        z-index: 2;
+    }
+    .active-pointer {
+        pointer-events: all;
+    }
+
+    .feature-arrow, .company-arrow {
+        transition: transform .2s ease-in-out;
+    }
+    .active-feature-arrow, .active-company-arrow {
+        transform: rotate(-180deg);
+    }
+    
+    &__features__links,
+    &__company__links {
+        display: flex;
+        align-items: flex-start;            
+        gap: .75rem;
+        font-size: .9rem;
+        pointer-events: none;
+        img {
+            transform: translateY(2px);
+        }
+    }
+    &__links {
+        max-width: fit-content;
+        margin: 1rem 0;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+    &__login-register {
+        margin: 2rem 0;
+        max-width: 250px;
+        display: grid;
+        gap: .5rem;
+        font-size: .9rem;
+        font-weight: 500;
+    }
+    &__login {
+        text-align: center;
+    }
+    &__register {
+        border: 2px solid variables.$Almost-Black;
+        border-radius: 12px;
+        padding: .5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        max-width: 100%;
+        margin: .75rem 1.5rem 0;        
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+        height: 70px;
+        &__logo {
+            width: 90px;            
+        }
+        &__menu {
+            height: fit-content;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        &__open-icon {
+            display: none;
+        }
+        &__darkened-bg {
+            display: none;
+        }
+        &__navbar {
+            opacity: 1;
+            display: flex;
+            justify-content: space-around;
+            gap: 3rem;
+            z-index: 0;
+            position: relative;
+            top: 0;
+            right: 0;
+            height: fit-content;
+            padding: 0;
+            transform: translateY(-2px);
+            width: 100%;
+        }
+        &__btn-close {
+            display: none;
+        }
+
+        &__features {
+            padding-top: 0;   
+        }
+        &__features__list,
+        &__company__list {
+            position: absolute;
+            top: 55px;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.278);
+            gap: 1rem;
+            z-index: -1;
+            pointer-events: none;
+            background-color: white;
+        }
+        .active-link {
+            height: 180px;
+            margin-top: 0;
+            opacity: 1;
+            pointer-events: all;
+            z-index: 2;
+        }
+        .active-link-company {
+            height: 135px;
+            margin-top: 0;
+            opacity: 1;
+            pointer-events: all;
+            z-index: 2;
+        }
+        .active-pointer {
+            pointer-events: all;
+        }
+    
+        .feature-arrow, .company-arrow {
+            transition: transform .2s ease-in-out;
+        }
+        .active-feature-arrow, .active-company-arrow {
+            transform: rotate(-180deg);
+        }
+        &__features__list {
+            left: -30px;
+        }    
+        
+        &__login-register {
+            max-width: max-content;
+            margin: 0 0 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            font-size: .9rem;
+            font-weight: 500;
+        }
+        &__login {
+            text-align: center;
+        }
+        &__register {
+            padding: .5rem 1.75rem;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+@use 'variables';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    &__picture {
+        max-width: 600px;
+        margin: auto;
+    }
+    &__content {
+        display: grid;
+        padding: 0 .5rem;
+    }
+    &__title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    &__paragraph {
+        text-align: center;
+        color: variables.$Medium-Gray;
+        font-weight: 500;
+    }
+    &__button {
+        margin: 1.5rem auto;
+        background-color: variables.$Almost-Black;
+        color: variables.$Almost-White;
+        width: fit-content;
+        padding: .7rem 1.5rem;
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 1rem;
+        z-index: 4;
+        border: 1px solid variables.$Almost-White;
+        transition: background-color .2s ease-in-out,
+                    color .2s ease-in-out,
+                    border .2s ease-in-out,
+                    scale .2s ease-in-out;
+        &:hover {
+            color: variables.$Almost-Black;
+            background-color: variables.$Almost-White;
+            border: 1px solid variables.$Almost-Black;
+            cursor: pointer;
+            scale: 1.01;
+        }
+    }
+    &__companies {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__companies-logo {
+        width: 75px;
+        margin: .8rem 0;
+        &:nth-child(2) {
+            padding: .8rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 0 3rem;
+        gap: 6rem;
+        margin: auto;
+        &__picture {
+            height: 90%;
+            grid-area: 1 / 2;
+        }
+        &__main-img {
+            height: 100%;
+            width: 100%;
+        }
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+        &__title {
+            font-size: 5rem;
+            text-align: start;
+            align-self: flex-start;
+            line-height: normal;
+            font-weight: 700;
+            // padding-right: 2rem;
+        }
+        &__paragraph {
+            text-align: start;
+            font-size: 1.25rem;
+            font-weight: 500;
+            // padding-right: 2rem;
+            
+        }
+        &__button {
+            margin: 1.5rem auto 1.5rem 0 ;
+            padding: 1rem 1.5rem;
+            font-size: 1.25rem;
+        }
+        
+        &__companies {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 2rem;
+        }
+        &__companies-logo {
+            width: 110px;
+            margin-top: 0;
+            &:nth-child(2) {
+                margin-top: auto;
+                padding: 1rem 1rem 0 1rem;
+            }
+        }
+    }
+}
