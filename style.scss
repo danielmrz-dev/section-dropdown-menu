@@ -16,7 +16,10 @@ body {
 
 @media screen and (min-width: 1024px) {
     body {
+        display: flex;
+        flex-direction: column;
+        justify-content: initial;
         min-height: 100vh;
-        grid-template-rows: 5% 95%;
+        // grid-template-rows: 0 1fr;
     }
 }
